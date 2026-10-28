@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Ibrahim Khalil | Executive - IT (MIS) & Logicsoft ERP Specialist</title>
+  
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              cyan: '#06b6d4',
+            },
+            dark: {
+              bg: '#090d16',
+              surface: '#0f172a',
+              card: '#131e36',
+              border: 'rgba(255, 255, 255, 0.08)',
+            }
+          },
+          boxShadow: {
+            'glow': '0 0 40px -10px rgba(16, 185, 129, 0.25)',
+            'glow-cyan': '0 0 40px -10px rgba(6, 182, 212, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom glow & glass backgrounds */
+    .glass-card {
+      background: rgba(19, 30, 54, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-card:hover {
+      border-color: rgba(52, 211, 153, 0.35);
+    }
+    .glass-nav {
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #34d399 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #10b981;
+    }
+  </style>
+</head>
+<body class="bg-[#090d16] text-slate-200 font-sans antialiased selection:bg-brand-500/20 selection:text-brand-400 min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient Light Orbs -->
+  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[128px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/2 right-10 w-[420px] h-[420px] bg-brand-cyan/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none -z-10"></div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-3 bg-slate-900 border border-brand-500/40 text-slate-100 px-4 py-3 rounded-xl shadow-2xl">
+    <i data-lucide="check-circle" class="w-5 h-5 text-brand-400"></i>
+    <span id="toast-msg" class="text-sm font-medium">Notification message</span>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-18 py-3.5">
+        
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-brand-cyan p-[1.5px] transition-transform duration-300 group-hover:scale-105">
+            <div class="w-full h-full bg-[#0b101c] rounded-[10px] flex items-center justify-center">
+              <span class="font-mono font-bold text-lg text-brand-400">IK</span>
+            </div>
+          </div>
+          <div>
+            <div class="text-base font-bold tracking-tight text-white flex items-center gap-2">
+              Md Ibrahim Khalil
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            </div>
+            <p class="text-xs text-slate-400 font-mono">Executive - IT (MIS)</p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-300">
+          <a href="#about" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">About</a>
+          <a href="#experience" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Experience</a>
+          <a href="#skills" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Skills</a>
+          <a href="#projects" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Case Studies</a>
+          <a href="#education" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Education</a>
+          <a href="#contact" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Contact</a>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="https://wa.me/8801713919877" target="_blank" rel="noopener noreferrer" 
+             class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp
+          </a>
+          <a href="#contact" class="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold bg-gradient-to-r from-brand-500 to-teal-500 text-slate-950 hover:brightness-110 shadow-lg shadow-brand-500/20 transition-all">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            Get in Touch
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 border-t border-slate-800/80 bg-[#090d16]/98 space-y-1">
+      <a href="#about" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">About</a>
+      <a href="#experience" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Experience</a>
+      <a href="#skills" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Skills</a>
+      <a href="#projects" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Case Studies</a>
+      <a href="#education" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Education & Certs</a>
+      <a href="#contact" class="block px-3 py-2.5 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Contact</a>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+        <a href="https://wa.me/8801713919877" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold text-sm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Chat
+        </a>
+        <a href="#contact" class="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-brand-500 text-slate-950 font-bold text-sm">
+          <i data-lucide="mail" class="w-4 h-4"></i> Send Message
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Intro -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-card border-brand-500/20 text-xs font-mono text-emerald-400 shadow-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          Currently Executive IT (MIS) at Vertex RMG Division
+        </div>
+
+        <div class="space-y-3">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Hi, I'm <span class="text-gradient">Md Ibrahim Khalil</span>
+          </h1>
+          <p class="text-lg sm:text-xl font-medium text-slate-300">
+            Executive – IT (MIS) &bull; Logicsoft ERP & Operations Specialist
+          </p>
+        </div>
+
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+          Bridging RMG manufacturing workflows with actionable data systems. Specialized in full-cycle 
+          <span class="text-slate-200 font-semibold">Logicsoft ERP Implementation</span>, master data validation, 
+          BOM tracking, inventory auditing, and executive MIS reporting across Merchandising, Production, and Supply Chain.
+        </p>
+
+        <!-- Key Meta Metrics Bar -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
+          <div class="glass-card p-3 sm:p-4 rounded-xl text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">2.3+</div>
+            <div class="text-xs text-slate-400 mt-0.5">Years Professional Exp.</div>
+          </div>
+          <div class="glass-card p-3 sm:p-4 rounded-xl text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-extrabold text-brand-400 font-mono">100%</div>
+            <div class="text-xs text-slate-400 mt-0.5">RMG ERP Lifecycle</div>
+          </div>
+          <div class="glass-card p-3 sm:p-4 rounded-xl text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-extrabold text-brand-cyan font-mono">B.Sc</div>
+            <div class="text-xs text-slate-400 mt-0.5">CSE Graduate (2024)</div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <button onclick="downloadOrViewCV()" class="flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-brand-500 to-brand-cyan text-slate-950 hover:opacity-95 shadow-lg shadow-brand-500/25 transition-all cursor-pointer">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            Download Resume (CV)
+          </button>
+          
+          <button onclick="copyEmail()" class="flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm glass-card hover:bg-slate-800 text-slate-300 transition-all border border-slate-700/60 cursor-pointer">
+            <i data-lucide="copy" class="w-4 h-4 text-brand-400"></i>
+            <span id="copy-btn-text">Copy Email</span>
+          </button>
+
+          <a href="tel:+8801713919877" class="flex items-center gap-2 px-4 py-3.5 rounded-xl font-semibold text-sm glass-card hover:bg-slate-800 text-slate-300 transition-all border border-slate-700/60">
+            <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
+            Call Me
+          </a>
+        </div>
+
+        <!-- Location Badge -->
+        <div class="flex items-center gap-2 text-xs text-slate-400 font-mono pt-2">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
+          Tetuljhora, Rajphulbaria, Savar, Dhaka 1347, Bangladesh
+        </div>
+      </div>
+
+      <!-- Right Column: Profile Picture Card -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-sm sm:max-w-md">
+          
+          <!-- Outer gradient aura -->
+          <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-500 via-teal-500 to-cyan-500 rounded-3xl blur-xl opacity-40 animate-pulse"></div>
+          
+          <!-- Card Body -->
+          <div class="relative glass-card rounded-2xl p-4 sm:p-5 border border-slate-700/70 shadow-2xl">
+            
+            <!-- Profile Image Container -->
+            <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-900 border border-slate-800 group">
+              <!-- Provided portrait image with fallback -->
+              <img 
+                src="IBRAHIM KHALIL.jpeg" 
+                alt="Md Ibrahim Khalil - IT MIS Executive" 
+                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              
+              <!-- Tag on image -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-slate-900/90 border border-emerald-500/30 text-[11px] font-mono text-emerald-300">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Verified RMG IT Professional
+                </div>
+                <div class="text-white font-bold text-lg mt-1">Md Ibrahim Khalil</div>
+                <p class="text-xs text-slate-300">Northern University Bangladesh ('24)</p>
+              </div>
+            </div>
+
+            <!-- Profile Info Chips -->
+            <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-2 text-xs">
+              <div class="flex items-center justify-between text-slate-400">
+                <span class="flex items-center gap-1.5"><i data-lucide="briefcase" class="w-3.5 h-3.5 text-slate-500"></i> Current Role</span>
+                <span class="text-slate-200 font-medium">Vertex RMG Division</span>
+              </div>
+              <div class="flex items-center justify-between text-slate-400">
+                <span class="flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-500"></i> Core Platform</span>
+                <span class="text-emerald-400 font-mono font-medium">Logicsoft ERP</span>
+              </div>
+              <div class="flex items-center justify-between text-slate-400">
+                <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-slate-500"></i> Contact</span>
+                <span class="text-slate-200 font-mono">ibrahimkhalil4206@gmail.com</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 border-t border-slate-900/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-xs font-mono tracking-widest text-brand-400 uppercase">Professional Background</h2>
+        <h3 class="text-3xl sm:text-4xl font-bold text-white mt-2">Executive Summary & Operational Focus</h3>
+        <p class="text-slate-400 text-base mt-3">
+          A results-driven MIS professional with hands-on expertise in driving Logicsoft ERP adoption across fast-paced apparel manufacturing environments.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400 mb-5 group-hover:bg-brand-500 group-hover:text-slate-950 transition-all duration-300">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">ERP Architecture & Logicsoft</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Leading end-to-end Logicsoft ERP administration, module testing, user training, and daily data auditing for Merchandising, Store, Purchase, and Commercial units.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan mb-5 group-hover:bg-brand-cyan group-hover:text-slate-950 transition-all duration-300">
+            <i data-lucide="pie-chart" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">MIS & Operational Intelligence</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Formulating data-backed analytical reports for leadership: daily production tracking, fabric & trims inventory aging, BOM discrepancies, and shipment deadlines.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-5 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-2">Computer Science & Engineering</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Holds a B.Sc in CSE with formal training in PHP Laravel from BASIS Institute (BITM). Combining technical logic with real-world industrial business workflows.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Quick Facts Box -->
+      <div class="mt-8 glass-card p-6 rounded-2xl border border-slate-800">
+        <h4 class="text-base font-semibold text-white mb-4 flex items-center gap-2">
+          <i data-lucide="check-check" class="w-5 h-5 text-brand-400"></i> Core Operations Managed in RMG
+        </h4>
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">BOM Validation</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">Purchase Order Reconciliation</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">Warehouse & Store Auditing</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">Production Floor Data Integrity</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">Buying House Coordination</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">Shipment Follow-up</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">ERP User Support & SOPs</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section id="experience" class="py-20 border-t border-slate-900/80 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-14">
+        <h2 class="text-xs font-mono tracking-widest text-brand-400 uppercase">Work Experience</h2>
+        <h3 class="text-3xl sm:text-4xl font-bold text-white mt-2">Career Journey & Milestone Promotions</h3>
+        <p class="text-slate-400 text-base mt-2">Demonstrated career progression within garment manufacturing technology and management.</p>
+      </div>
+
+      <!-- Timeline Wrapper -->
+      <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-8 space-y-12">
+        
+        <!-- Experience 1: Vertex RMG Division (Executive) -->
+        <div class="relative pl-6 sm:pl-10 group">
+          <!-- Marker dot -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-900 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-card p-6 sm:p-8 rounded-2xl border-brand-500/30">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 mb-2">
+                  Promoted Role &bull; Present
+                </span>
+                <h4 class="text-2xl font-bold text-white">Executive — IT (MIS)</h4>
+                <div class="text-sm font-semibold text-brand-400 mt-0.5">Vertex RMG Division</div>
+              </div>
+              <div class="text-xs font-mono text-slate-400 sm:text-right">
+                <div>Nov 2025 – Present</div>
+                <div class="text-slate-500">Vorari, Rajfulbaria, Savar, Dhaka</div>
+              </div>
+            </div>
+
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Directly responsible for the operational stability, data integrity, and cross-departmental coordination of the <span class="text-brand-300 font-semibold">Logicsoft ERP</span> ecosystem across all factory units.
+            </p>
+
+            <ul class="space-y-2.5 text-sm text-slate-400">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-brand-400 mt-1 shrink-0"></i>
+                <span><strong>ERP Operations & Vendor Liaison:</strong> Manage daily Logicsoft ERP functions, coordinate system fixes/patches with the software vendor, and supervise ERP workflow improvements.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-brand-400 mt-1 shrink-0"></i>
+                <span><strong>Management MIS Reporting:</strong> Formulate automated and customized analytical reports regarding inventory levels, production output, and supply chain tracking for senior leadership.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-brand-400 mt-1 shrink-0"></i>
+                <span><strong>Full Departmental Support:</strong> Supervise data accuracy for Merchandising, Planning, Purchase, Inventory, Store, Commercial, Shipment, and Buying House operations.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-brand-400 mt-1 shrink-0"></i>
+                <span><strong>User Training & Troubleshooting:</strong> Continuously train floor executives, write SOPs, and resolve transactional bottlenecks across departments.</span>
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-slate-800/80">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-300">Logicsoft ERP</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-300">BOM Tracking</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-300">MIS Dashboards</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-300">Inventory Audits</span>
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 text-slate-300">Shipment Follow-up</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2: Vertex RMG Division (Jr. Executive) -->
+        <div class="relative pl-6 sm:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-900 group-hover:bg-brand-cyan transition-colors"></div>
+          
+          <div class="glass-card p-6 sm:p-8 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-800 text-slate-300 border border-slate-700 mb-2">
+                  6 Months
+                </span>
+                <h4 class="text-xl font-bold text-white">Jr. Executive — IT (MIS)</h4>
+                <div class="text-sm font-semibold text-slate-300 mt-0.5">Vertex RMG Division</div>
+              </div>
+              <div class="text-xs font-mono text-slate-400 sm:text-right">
+                <div>Apr 2025 – Oct 2025</div>
+                <div class="text-slate-500">Savar, Dhaka</div>
+              </div>
+            </div>
+
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-cyan mt-1 shrink-0"></i>
+                <span>Assisted in initial ERP implementation phase, master data verification, and rigorous user acceptance testing.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-cyan mt-1 shrink-0"></i>
+                <span>Conducted frontline support for users facing system discrepancies, missing entries, and validation errors.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-cyan mt-1 shrink-0"></i>
+                <span>Generated routine daily operational spreadsheets and ensured timely synchronization of store issues with production tallies.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 3: Genex Infosys Limited -->
+        <div class="relative pl-6 sm:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-800 ring-4 ring-slate-900"></div>
+          
+          <div class="glass-card p-6 sm:p-8 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-800 text-slate-400 border border-slate-700 mb-2">
+                  8 Months
+                </span>
+                <h4 class="text-xl font-bold text-white">Customer Service Officer (CSO)</h4>
+                <div class="text-sm font-semibold text-slate-300 mt-0.5">Genex Infosys Limited</div>
+              </div>
+              <div class="text-xs font-mono text-slate-400 sm:text-right">
+                <div>Feb 2023 – Oct 2023</div>
+                <div class="text-slate-500">Nikunja 2, Khilkhet, Dhaka</div>
+              </div>
+            </div>
+
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Maintained high customer satisfaction ratings while handling inbound service inquiries, technical complaints, and issue escalations. Developed active listening, crisis management, and cross-team communication abilities.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Skills Matrix -->
+  <section id="skills" class="py-20 border-t border-slate-900/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <h2 class="text-xs font-mono tracking-widest text-brand-400 uppercase">Core Competencies</h2>
+          <h3 class="text-3xl sm:text-4xl font-bold text-white mt-2">Technical & Operational Skills</h3>
+          <p class="text-slate-400 text-base mt-2">Filter between ERP tools, RMG domain knowledge, and software capabilities.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800">
+          <button onclick="filterSkills('all')" class="skill-tab active px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-brand-500 text-slate-950 transition-all cursor-pointer">All Skills</button>
+          <button onclick="filterSkills('erp')" class="skill-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all cursor-pointer">ERP & MIS</button>
+          <button onclick="filterSkills('rmg')" class="skill-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all cursor-pointer">RMG Operations</button>
+          <button onclick="filterSkills('tech')" class="skill-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all cursor-pointer">Programming & IT</button>
+        </div>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Skill 1 -->
+        <div class="skill-item glass-card p-5 rounded-xl border border-slate-800" data-category="erp">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </span>
+            <span class="text-xs font-mono text-emerald-400">Expert</span>
+          </div>
+          <h5 class="text-base font-bold text-white">Logicsoft ERP</h5>
+          <p class="text-xs text-slate-400 mt-1">End-to-end administration, transaction auditing & workflow setup.</p>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="skill-item glass-card p-5 rounded-xl border border-slate-800" data-category="erp">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
+              <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+            </span>
+            <span class="text-xs font-mono text-emerald-400">Expert</span>
+          </div>
+          <h5 class="text-base font-bold text-white">MIS Reporting</h5>
+          <p class="text-xs text-slate-400 mt-1">BOM tracking, discrepancy reports, executive summary generation.</p>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="skill-item glass-card p-5 rounded-xl border border-slate-800" data-category="rmg">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">
+              <i data-lucide="scissors" class="w-5 h-5"></i>
+            </span>
+            <span class="text-xs font-mono text-cyan-400">Advanced</span>
+          </div>
+          <h5 class="text-base font-bold text-white">RMG Production Flow</h5>
+          <p class="text-xs text-slate-400 mt-1">Cutting, sewing, finishing, store reconciliations, and line outputs.</p>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="skill-item glass-card p-5 rounded-xl border border-slate-800" data-category="rmg">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">
+              <i data-lucide="package" class="w-5 h-5"></i>
+            </span>
+            <span class="text-xs font-mono text-cyan-400">Advanced</span>
+          </div>
+          <h5 class="text-base font-bold text-white">Inventory & Store</h5>
+          <p class="text-xs text-slate-400 mt-1">Fabric & trims inventory control, stock valuation, MRR & issue tracking.</p>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="skill-item glass-card p-5 rounded-xl border border-slate-800" data-category="rmg">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            </span>
+            <span class="text-xs font-mono text-cyan-400">Advanced</span>
+          </div>
+          <h5 class="text-base font-bold text-white">Merchandising & Buying</h5>
+          <p class="text-xs text-slate-400 mt-1">Order tracking, PO entry validation, consumption vs reality analysis.</p>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="skill-item glass-card p-5 rounded-xl border border-slate-800" data-category="erp">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
+              <i data-lucide="table" class="w-5 h-5"></i>
+            </span>
+            <span class="text-xs font-mono text-emerald-400">Advanced</span>
+          </div>
+          <h5 class="text-base font-bold text-white">Advanced MS Excel</h5>
+          <p class="text-xs text-slate-400 mt-1">Pivot tables, VLOOKUP/XLOOKUP, formulas, dynamic cross-sheets.</p>
+        </div>
+
+        <!-- Skill 7 -->
+        <div class="skill-item glass-card p-5 rounded-xl border border-slate-800" data-category="tech">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold">
+              <i data-lucide="code" class="w-5 h-5"></i>
+            </span>
+            <span class="text-xs font-mono text-indigo-400">Certified</span>
+          </div>
+          <h5 class="text-base font-bold text-white">PHP & Laravel</h5>
+          <p class="text-xs text-slate-400 mt-1">BITM trained web framework, MVC architecture, RESTful endpoints.</p>
+        </div>
+
+        <!-- Skill 8 -->
+        <div class="skill-item glass-card p-5 rounded-xl border border-slate-800" data-category="tech">
+          <div class="flex items-center justify-between mb-3">
+            <span class="w-9 h-9 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold">
+              <i data-lucide="pen-tool" class="w-5 h-5"></i>
+            </span>
+            <span class="text-xs font-mono text-indigo-400">Certified</span>
+          </div>
+          <h5 class="text-base font-bold text-white">Graphic Design</h5>
+          <p class="text-xs text-slate-400 mt-1">Branding design, packaging layout, print design (CodeCare BD).</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Key Case Studies / Project Impact -->
+  <section id="projects" class="py-20 border-t border-slate-900/80 bg-slate-950/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-xs font-mono tracking-widest text-brand-400 uppercase">Operational Highlights</h2>
+        <h3 class="text-3xl sm:text-4xl font-bold text-white mt-2">Case Studies & Implementation Work</h3>
+        <p class="text-slate-400 text-base mt-2">Real solutions deployed at Vertex RMG to streamline factory floor efficiency.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Case Study 1 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-brand-500/40 transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-emerald-400 mb-4">
+              <span>Vertex RMG</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">Active System</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2.5">Logicsoft ERP Deployment & Adoption</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Orchestrated full user-onboarding across 6 operational departments. Established standard operational routines (SOP), reducing initial logging errors by over 40% within the first quarter.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+            <span>Result: Clean Master Data</span>
+            <i data-lucide="check-circle" class="w-4 h-4 text-brand-400"></i>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-brand-cyan/40 transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-cyan-400 mb-4">
+              <span>Cost Control</span>
+              <span class="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20">Audit Framework</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2.5">BOM vs Actual Consumption Auditing</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Constructed automated discrepancy checks comparing Bill of Materials (BOM) allocations against actual floor requisitions, preventing excessive fabric wastage and stock divergence.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+            <span>Result: Minimized Fabric Leakage</span>
+            <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-amber-500/40 transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-amber-400 mb-4">
+              <span>Leadership MIS</span>
+              <span class="px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">Daily Executive Deck</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2.5">Executive Daily KPI Dashboard</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Integrated real-time cut-to-ship metrics into an intuitive daily report deck for management, highlighting critical production bottlenecks, purchase pendency, and dispatch delays.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800 text-xs font-mono text-slate-400 flex items-center justify-between">
+            <span>Result: Faster Decision Making</span>
+            <i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education, Certifications & References Section -->
+  <section id="education" class="py-20 border-t border-slate-900/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Education & Credentials -->
+        <div class="lg:col-span-7 space-y-8">
+          <div>
+            <h2 class="text-xs font-mono tracking-widest text-brand-400 uppercase">Academic Qualifications</h2>
+            <h3 class="text-3xl font-bold text-white mt-1">Education & Degrees</h3>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- Degree 1 -->
+            <div class="glass-card p-5 rounded-xl border border-slate-800 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center shrink-0">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-base font-bold text-white">B.Sc in Computer Science & Engineering (CSE)</h4>
+                  <span class="text-xs font-mono text-brand-400">2024</span>
+                </div>
+                <div class="text-sm text-slate-300 font-medium">Northern University Bangladesh</div>
+                <div class="text-xs text-slate-400 mt-1">Duration: 4 Years &bull; Focus: Software, Data Structures, Networks & Systems</div>
+              </div>
+            </div>
+
+            <!-- Degree 2 -->
+            <div class="glass-card p-5 rounded-xl border border-slate-800 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center shrink-0">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-base font-bold text-white">Higher Secondary Certificate (HSC)</h4>
+                  <span class="text-xs font-mono text-slate-400">2019</span>
+                </div>
+                <div class="text-sm text-slate-300">K.B.A Govt. College</div>
+                <div class="text-xs text-slate-400 mt-1">Concentration: Science & Mathematics</div>
+              </div>
+            </div>
+
+            <!-- Degree 3 -->
+            <div class="glass-card p-5 rounded-xl border border-slate-800 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center shrink-0">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-base font-bold text-white">Secondary School Certificate (SSC)</h4>
+                  <span class="text-xs font-mono text-slate-400">2014</span>
+                </div>
+                <div class="text-sm text-slate-300">Townsripur S.C High School</div>
+                <div class="text-xs text-slate-400 mt-1">Concentration: Science</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Professional Certifications -->
+          <div class="pt-6">
+            <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-5 h-5 text-brand-cyan"></i> Professional Trainings & Certifications
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="glass-card p-4 rounded-xl border border-slate-800">
+                <div class="text-xs font-mono text-brand-cyan">BITM (BASIS Institute)</div>
+                <div class="font-bold text-white text-sm mt-1">PHP with Laravel Framework</div>
+                <div class="text-xs text-slate-400 mt-0.5">Kawran Bazar, Dhaka &bull; 2023</div>
+              </div>
+
+              <div class="glass-card p-4 rounded-xl border border-slate-800">
+                <div class="text-xs font-mono text-brand-cyan">BITM (BASIS Institute)</div>
+                <div class="font-bold text-white text-sm mt-1">Professional English Communication</div>
+                <div class="text-xs text-slate-400 mt-0.5">Business & Technical Fluency &bull; 2023</div>
+              </div>
+
+              <div class="glass-card p-4 rounded-xl border border-slate-800 sm:col-span-2">
+                <div class="text-xs font-mono text-brand-cyan">CodeCare BD</div>
+                <div class="font-bold text-white text-sm mt-1">Graphic Design (Brand, Print & Packaging)</div>
+                <div class="text-xs text-slate-400 mt-0.5">3 Months Intensive Training &bull; 2022</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Official Reference & Languages -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <h2 class="text-xs font-mono tracking-widest text-brand-400 uppercase">Verification & Endorsement</h2>
+            <h3 class="text-3xl font-bold text-white mt-1">Reference & Personal</h3>
+          </div>
+
+          <!-- Reference Card -->
+          <div class="glass-card p-6 rounded-2xl border-emerald-500/20 shadow-glow">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                A
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white">Ashaduzzaman</h4>
+                <p class="text-xs text-brand-400 font-mono">Ass. Manager - IT (MIS)</p>
+              </div>
+            </div>
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="building" class="w-4 h-4 text-slate-500"></i>
+                <span>Vertex RMG Division</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-slate-500"></i>
+                <span>Tetuljhora, Rajphulbaria, Savar, Dhaka 1347</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="phone" class="w-4 h-4 text-slate-500"></i>
+                <a href="tel:01793557997" class="hover:text-emerald-400 font-mono">01793557997</a>
+              </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 italic">
+              "Professional superior reference available for direct verification regarding Logicsoft ERP leadership, dependability, and data integrity."
+            </div>
+          </div>
+
+          <!-- Languages Box -->
+          <div class="glass-card p-6 rounded-2xl border border-slate-800">
+            <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
+              <i data-lucide="languages" class="w-4 h-4 text-brand-cyan"></i> Language Proficiency
+            </h4>
+            <div class="space-y-3 text-xs">
+              <div>
+                <div class="flex justify-between mb-1 text-slate-300">
+                  <span>Bangla (Native)</span>
+                  <span class="font-mono text-brand-400">Fluent / Professional</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                  <div class="w-full h-full bg-brand-500"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1 text-slate-300">
+                  <span>English (Professional - BITM Certified)</span>
+                  <span class="font-mono text-brand-cyan">High Reading & Working Fluency</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                  <div class="w-[85%] h-full bg-brand-cyan"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1 text-slate-300">
+                  <span>Hindi (Spoken)</span>
+                  <span class="font-mono text-slate-400">Conversational</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                  <div class="w-[60%] h-full bg-amber-400"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact & Direct Communication Section -->
+  <section id="contact" class="py-20 border-t border-slate-900/80 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-2xl mx-auto text-center mb-12">
+        <h2 class="text-xs font-mono tracking-widest text-brand-400 uppercase">Connect Direct</h2>
+        <h3 class="text-3xl sm:text-4xl font-bold text-white mt-2">Get in Touch</h3>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Looking for an experienced MIS & Logicsoft ERP Executive for your garments or manufacturing organization? Feel free to call, message, or email.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Contact Info Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Email Card -->
+          <a href="mailto:ibrahimkhalil4206@gmail.com" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-brand-500 transition-all group block">
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center shrink-0 group-hover:bg-brand-500 group-hover:text-slate-950 transition-all">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div class="overflow-hidden">
+              <div class="text-xs text-slate-400 font-mono">Email Address</div>
+              <div class="text-sm font-bold text-white truncate group-hover:text-brand-400">ibrahimkhalil4206@gmail.com</div>
+            </div>
+          </a>
+
+          <!-- WhatsApp Card -->
+          <a href="https://wa.me/8801713919877" target="_blank" rel="noopener noreferrer" class="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-emerald-500 transition-all group block">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-mono">WhatsApp (Direct Chat)</div>
+              <div class="text-sm font-bold text-white group-hover:text-emerald-400">+880 1713-919877</div>
+            </div>
+          </a>
+
+          <!-- Phone Numbers -->
+          <div class="glass-card p-4 rounded-xl space-y-2">
+            <div class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-cyan"></i> Official Contact Numbers
+            </div>
+            <div class="grid grid-cols-1 gap-2 pt-1">
+              <a href="tel:01713919877" class="text-sm text-slate-200 hover:text-brand-400 font-mono flex items-center justify-between py-1 border-b border-slate-800">
+                <span>01713-919877 (Primary)</span>
+                <i data-lucide="phone-call" class="w-3.5 h-3.5 text-slate-500"></i>
+              </a>
+              <a href="tel:01911251666" class="text-sm text-slate-200 hover:text-brand-400 font-mono flex items-center justify-between py-1 border-b border-slate-800">
+                <span>01911-251666</span>
+                <i data-lucide="phone-call" class="w-3.5 h-3.5 text-slate-500"></i>
+              </a>
+              <a href="tel:01601780128" class="text-sm text-slate-200 hover:text-brand-400 font-mono flex items-center justify-between py-1">
+                <span>01601-780128</span>
+                <i data-lucide="phone-call" class="w-3.5 h-3.5 text-slate-500"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="glass-card p-4 rounded-xl flex items-center gap-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-rose-400 shrink-0"></i>
+            <div class="text-xs text-slate-300 leading-snug">
+              <strong>Tetuljhora, Rajphulbaria, Savar, Dhaka 1347</strong><br>
+              <span class="text-slate-500">Permanent: Debhata, Satkhira, Bangladesh</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Quick Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
+            <h4 class="text-xl font-bold text-white mb-2">Send an Instant Message</h4>
+            <p class="text-xs text-slate-400 mb-6">Will open directly in your mail client or generate a WhatsApp dispatch.</p>
+            
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1.5">Your Name</label>
+                  <input type="text" id="sender-name" required placeholder="e.g. Tanvir Ahmed" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:border-brand-500 focus:outline-none transition-colors">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1.5">Company / Organization</label>
+                  <input type="text" id="sender-company" placeholder="e.g. Textile / Garments Ltd." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:border-brand-500 focus:outline-none transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1.5">Your Email</label>
+                <input type="email" id="sender-email" required placeholder="e.g. name@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:border-brand-500 focus:outline-none transition-colors">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1.5">Message / Inquiry</label>
+                <textarea id="sender-message" rows="4" required placeholder="Write about your requirements, ERP implementation inquiries, or interview schedule..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:border-brand-500 focus:outline-none transition-colors"></textarea>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                <button type="submit" class="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-brand-500 to-teal-500 text-slate-950 hover:brightness-110 shadow-lg shadow-brand-500/25 transition-all cursor-pointer">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  Send via Email Client
+                </button>
+                <button type="button" onclick="sendViaWhatsApp()" class="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all cursor-pointer">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  Via WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-900 bg-[#070a12] text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-mono font-bold text-brand-400 text-sm">Md Ibrahim Khalil</span>
+        <span class="text-slate-600">&bull;</span>
+        <span>Executive - IT (MIS)</span>
+      </div>
+      <div class="text-slate-400 text-center sm:text-right">
+        Designed for Logicsoft ERP & RMG Operations Portfolio &bull; Tetuljhora, Savar, Dhaka
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Navigation Toggle
+    const mobileBtn = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Toast Notification Utility
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.innerText = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+
+    // Copy Email to Clipboard
+    function copyEmail() {
+      const email = 'ibrahimkhalil4206@gmail.com';
+      const tempInput = document.createElement('input');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        showToast('Email copied to clipboard: ' + email);
+        const btnText = document.getElementById('copy-btn-text');
+        btnText.innerText = 'Copied!';
+        setTimeout(() => {
+          btnText.innerText = 'Copy Email';
+        }, 2000);
+      } catch (err) {
+        showToast('Copy error, please email ibrahimkhalil4206@gmail.com');
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    // View / Download CV Action
+    function downloadOrViewCV() {
+      // Points directly to the provided PDF file if placed in the root folder, or prompts printing
+      window.open('Md Ibrahim Khalil-details_cv.pdf', '_blank');
+      showToast('Opening CV / Resume document...');
+    }
+
+    // Filter Skills by Category
+    function filterSkills(category) {
+      const items = document.querySelectorAll('.skill-item');
+      const tabs = document.querySelectorAll('.skill-tab');
+
+      // Update Tab Styles
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-brand-500', 'text-slate-950');
+        tab.classList.add('text-slate-400');
+      });
+      event.target.classList.remove('text-slate-400');
+      event.target.classList.add('bg-brand-500', 'text-slate-950');
+
+      // Filter elements
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (category === 'all' || itemCat === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Handle Form Submit via mailto
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('sender-name').value;
+      const company = document.getElementById('sender-company').value;
+      const email = document.getElementById('sender-email').value;
+      const message = document.getElementById('sender-message').value;
+
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name} (${company || 'Direct'})`);
+      const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+      window.location.href = `mailto:ibrahimkhalil4206@gmail.com?subject=${subject}&body=${body}`;
+      showToast('Mail client opening with your message prefilled!');
+    }
+
+    // Send Form Content via WhatsApp
+    function sendViaWhatsApp() {
+      const name = document.getElementById('sender-name').value || 'Visitor';
+      const company = document.getElementById('sender-company').value || '';
+      const message = document.getElementById('sender-message').value || 'Hello Md Ibrahim Khalil, I viewed your portfolio and would like to connect.';
+
+      let text = `*New Portfolio Contact*\n*Name:* ${name}\n`;
+      if (company) text += `*Company:* ${company}\n`;
+      text += `*Message:* ${message}`;
+
+      const url = `https://wa.me/8801713919877?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
